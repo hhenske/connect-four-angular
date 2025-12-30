@@ -1,8 +1,19 @@
+.board-wrapper {
+  width: calc(100vw - 24px); // ~12px padding each side
+  max-width: 480px;         // optional desktop cap
+  margin: 0 auto;
+
+  aspect-ratio: 7 / 6;      // 🔥 keeps board proportional
+}
+
 .board {
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(7, var(--cell-size));
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   gap: var(--space-sm);
-  background: var(--color-board);
+  background: white;
   padding: var(--space-md);
   border-radius: var(--radius-lg);
 }

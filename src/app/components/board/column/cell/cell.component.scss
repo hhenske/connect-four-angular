@@ -1,6 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
 .cell {
-    width: var(--cell-size);
-    height: var(--cell-size);
-    border-radius: var(--radius-sm);
-    background-color: var(--color-bg);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: var(--color-bg);
 }

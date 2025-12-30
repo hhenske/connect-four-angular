@@ -11,4 +11,6 @@ import { CellComponent } from './cell/cell.component';
 
 export class ColumnComponent {
   @Input() columnIndex!: number;
+
+  rows = Array(6).fill(0);
 }
