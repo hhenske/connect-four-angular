@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+/* =======================
+   CSS VARIABLES (Design System)
+   ======================= */
+
+:root {
+  /* Colors */
+  --color-bg: #f2f2f2;
+  --color-board: #0047ab;
+
+  --color-player-1: #ffce67;
+  --color-player-2: #fd6687;
+
+  --color-text-dark: #000000;
+  --color-text-light: #ffffff;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Cell */
+  --cell-size: 56px;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--color-bg);
+}
