@@ -1,0 +1,54 @@
+.header {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.header-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.icon-btn {
+  height: 40px;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--color-board);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.header-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.score-card {
+  background: white;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.score {
+  font-size: 1.5rem;
+}

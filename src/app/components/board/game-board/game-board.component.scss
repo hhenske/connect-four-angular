@@ -1,14 +1,12 @@
 .board-wrapper {
-  width: calc(100vw - 24px); // ~12px padding each side
-  max-width: 480px;         // optional desktop cap
+  width: 100%;  
+  padding: 0 8px;
   margin: 0 auto;
-  padding: var(--space-sm) 0;
-  aspect-ratio: 7 / 6;      // 🔥 keeps board proportional
 }
 
 .board {
-  width: 100%;
-  max-width: 95vw;
+  width: 90%;
+  aspect-ratio: 7 / 6;      // 🔥 keeps board proportional
   height: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
