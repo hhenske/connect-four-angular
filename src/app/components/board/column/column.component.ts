@@ -6,7 +6,8 @@ import { CellComponent } from './cell/cell.component';
   selector: 'app-column',
   standalone: true,
   templateUrl: './column.component.html',
-  styleUrls: ['./column.component.scss']
+  styleUrls: ['./column.component.scss'],
+  imports: [CellComponent]
 })
 
 export class ColumnComponent {
