@@ -19,17 +19,20 @@
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
+  --space-xlg: 40px;
 
   /* Radius */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
+  --radius-xlg: 40px;
 
   /* Cell */
   --cell-size: 56px;
 }
 
 body {
+  margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   background: var(--color-bg);
 }
