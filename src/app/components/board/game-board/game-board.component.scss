@@ -1,8 +1,22 @@
 .board-wrapper {
+  // display: flex;
+  // flex-direction: column;
+  position: relative;
+  // justify-content: center;
+  // padding: 0 8px; /* safe mobile gutter */
+  // z-index: 5;
+  overflow: visible;
+}
+
+.board-container {
   display: flex;
   justify-content: center;
   padding: 0 8px; /* safe mobile gutter */
+  z-index: 5; 
+  position: relative;
+  overflow: visible;
 }
+
 .board {
   width: 100%;
   max-width: 420px;
@@ -13,10 +27,59 @@
   grid-auto-rows: var(--cell-size);
   // grid-template-columns: repeat(7, var(--cell-size));
   gap: var(--space-sm);
-
   background: white;
   padding: var(--space-md);
   border: 6px solid black;
   border-radius: var(--radius-lg);
+  overflow: visible !important;
 }
 
+
+
+.status-panel {
+  position: relative;
+  margin-top: -40px; /* 🔥 overlap the board */
+  position: relative   ;
+  height:500px;
+}
+
+.status-bg {
+    position: absolute;
+    top: 40%;
+    background: var(--color-board);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    z-index: 0;
+}
+
+img {
+  position: absolute;
+  top: 114%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  z-index: 10;
+}
+
+.turn-label {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 150;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  color: black;
+  z-index: 11;
+}
+
+.turn-timer {
+  position: absolute;
+  top: 118%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 150;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  z-index: 11;
+}
