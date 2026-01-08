@@ -1,18 +1,28 @@
 .board-wrapper {
   position: relative;
-  // justify-content: center;
-  // padding: 0 8px; /* safe mobile gutter */
-  // z-index: 5;
   overflow: visible;
+  padding-bottom: 100px; /* Make room for the turn indicator */
+}
+
+.turn-bg {
+  position: absolute;
+  top: calc(100% - 190px); /* Adjust to control how much it overlaps the board */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 600px;
+  background: var(--color-board);
+  z-index: 1;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
 }
 
 .board-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
-  padding: 0 8px; /* safe mobile gutter */
-  z-index: 5; 
-  position: relative;
-  overflow: visible;
+  padding: 0 8px;
 }
 
 .board {
@@ -21,91 +31,62 @@
   aspect-ratio: 7 / 6;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  // grid-template-rows: repeat(6, 1fr);
   grid-auto-rows: var(--cell-size);
-  // grid-template-columns: repeat(7, var(--cell-size));
   gap: var(--space-sm);
   background: white;
   padding: var(--space-md);
   border: 6px solid black;
   border-radius: var(--radius-lg);
-  // overflow: visible !important;
 }
 
-
-// img {
-//   position: absolute;
-//   top: 114%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   width: 40%;
-//   z-index: 10;
-// }
-.turn-label {
+.turn-overlay {
   position: absolute;
-  top: 28%;
+  bottom: -32px; /* This controls overlap with board - adjust as needed */
   left: 50%;
   transform: translateX(-50%);
+  
+  width: 180px;
+  height: 150px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Remove the ::before pseudo-element background */
+.turn-overlay::before {
+  display: none;
+}
+
+.player-indicator {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.turn-label {
+  position: relative;
   font-size: 0.75rem;
+  font-weight: bold;
   color: white;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
   z-index: 2;
 }
 
 .turn-timer {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
+  position: relative;
+  font-size: 2.5rem;
   font-weight: bold;
   color: white;
+  margin-top: 5px;
   z-index: 2;
-}
-
-
-.turn-overlay {
-  position: absolute;
-  bottom: -45px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-
-  width: 180px;        // 🔥 gives ::before something to size
-  height: 120px;
-
-  display: grid;
-  place-items: center;
-
-  pointer-events: none;
-}
-
-.turn-overlay::before {
-  content: '';
-  position: absolute;
-
-  width: 220px;
-  height: 110px;
-
-  bottom: -10px;   /* stays below the board */
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: var(--color-board);
-  border-radius: 999px;
-  z-index: 0;
-}
-
-
-
-.player-indicator {
-  width: 100%;
-  height: auto;
-  display: block;
-  z-index: 1;
-}
-
-.turn-indicator {
-  width: 160px;
-  height: auto;
-  display: block;
 }
